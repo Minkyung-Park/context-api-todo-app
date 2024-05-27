@@ -2,6 +2,11 @@ import React from "react";
 import Button from "./Button";
 import styled from "@emotion/styled";
 
+interface Props {
+  label: string;
+  onDelete?: () => void;
+}
+
 const TodoItemWrapStyle = styled.div`
   display: flex;
   align-items: center;
@@ -24,7 +29,7 @@ const LabelStyle = styled.div`
 컴포넌트 안에는 이벤트를 쓸 수 없다
 */
 
-const TodoItem = ({ label, onDelete }) => {
+const TodoItem = ({ label, onDelete }: Props) => {
   return (
     <TodoItemWrapStyle>
       <LabelStyle>{label}</LabelStyle>

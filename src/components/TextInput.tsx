@@ -1,11 +1,16 @@
 import styled from "@emotion/styled";
 
+interface Props {
+  value: string;
+  onChange: (text: string) => void; // text : 매개변수 이름
+}
+
 const InputStyle = styled.input`
   font-size: 1.2rem;
   padding: 8px;
 `;
 
-const TextInput = ({ value, onChange }) => {
+const TextInput = ({ value, onChange }: Props) => {
   return (
     <InputStyle
       type="text"
